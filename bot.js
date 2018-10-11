@@ -27,7 +27,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-lient.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith("رابط")) {
  
   message.channel.createInvite({
