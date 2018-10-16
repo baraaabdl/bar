@@ -28,28 +28,30 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
-        
+    if (message.content.startsWith("-link")) {
+ 
   message.channel.createInvite({
         thing: true,
-        maxUses: 5,
+        maxUses: 100,
         maxAge: 86400
-    }).then(invite =>  
+    }).then(invite =>
       message.author.sendMessage(invite.url)
     )
     const embed = new Discord.RichEmbed()
-        .setColor("2fff00")
-        .setDescription("| :white_check_mark:  | :heart:  تم ارسال الرابط على الخاص  ")
-        .setFooter("Spring-Team")
+        .setColor("RANDOM")
+        .setDescription("| :white_check_mark:  | :heart:  Check youe Dm your get link . ")
       message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
               const Embed11 = new Discord.RichEmbed()
-        .setColor("2fff00")
+        .setColor("RANDOM")
+                .setAuthor(message.guild.name, message.guild.iconURL)
         .setDescription(`
-**-------------------
--هذا هو الرابط 
--ونورتنا ياجميل :heart: 
-------------------- **`)
-        .setFooter("By: iiFireKingYTii_")
+**
+---------------------
+-[${message.guild.name}]  
+
+This link for 10 uses , 24 hours Only .
+---------------------
+**`)
       message.author.sendEmbed(Embed11)
     }
 });
