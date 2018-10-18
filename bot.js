@@ -5,7 +5,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
+    if (message.content.startsWith("-link")) {
  
   message.channel.createInvite({
         thing: true,
@@ -22,10 +22,13 @@ client.on('message', message => {
         .setColor("RANDOM")
                 .setAuthor(message.guild.name, message.guild.iconURL)
         .setDescription(`
+**
+---------------------
+-[${message.guild.name}]  هذا هو رابط سيرفر
 
+هذا الرابط صالح ل 100 مستخدم فقط
 
--[${message.guild.name}]  
-This link for 10 uses , for 24 hours only
+-هذا الرابط صالح لمده 24 ساعه فقط
 
 **`)
       message.author.sendEmbed(Embed11)
